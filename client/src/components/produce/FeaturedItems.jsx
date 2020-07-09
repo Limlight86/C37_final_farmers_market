@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useCallback } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
 import { Link } from 'react-router-dom';
@@ -7,13 +7,13 @@ import { Card } from 'react-bootstrap';
 const FeaturedItems = () => {
   const { produceList, farmers } = useContext(AppContext);
 
-  const getRandomItemRecursive = (acc) => {
+  const getRandomItemRecursive = useCallback((acc) => {
     const randomIndex = Math.floor(Math.random() * produceList.length);
     const randomItem = produceList[randomIndex];
     const isDuplicate = acc.some((produce) => produce._id === randomItem._id);
     if (isDuplicate) return getRandomItemRecursive(acc);
     return randomItem;
-  };
+  }, [produceList]);
 
   const featuredItems = useMemo(
     () =>
@@ -21,7 +21,7 @@ const FeaturedItems = () => {
         acc.push(getRandomItemRecursive(acc));
         return acc;
       }, []),
-    [produceList]
+    [produceList, getRandomItemRecursive]
   );
 
   return (
@@ -44,6 +44,7 @@ const FeaturedItems = () => {
                     if (farm._id === item.farmerStore) {
                       return farm.storeName;
                     }
+                    return null
                   })}
               </Card.Text>
               <Link

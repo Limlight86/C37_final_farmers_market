@@ -67,7 +67,7 @@ const Produce = () => {
 
   useEffect(() => {
     if (chosenStore === '' && !searchTerm) {
-      return setDisplayedList(produceList), setSelectedFarmer({});
+      return (setDisplayedList(produceList), setSelectedFarmer({}));
     }
     const currentFarmer = farmers.filter(
       (farmer) => farmer._id === chosenStore
@@ -82,7 +82,7 @@ const Produce = () => {
           );
         })
       );
-  }, [chosenStore, farmers, searchTerm]);
+  }, [chosenStore, farmers, searchTerm, produceList]);
 
   useEffect(() => {
     setDisplayedList(

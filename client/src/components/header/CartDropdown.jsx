@@ -76,8 +76,7 @@ const CartDrodown = () => {
         </p>
         <button
           className="dropdown-checkout-button"
-          onClick={sendOrder}
-          onClick={() => history.push(`/checkout`)}
+          onClick={() =>{history.push(`/checkout`); sendOrder()}}
         >
           Checkout
         </button>

@@ -19,10 +19,10 @@ const Footer = () => {
           </div>
           <ul className="footer-links footer-section">
             <li>
-              <a href="" >Help</a>
+              <a href="/" >Help</a>
             </li>
             <li>
-              <a href="" >Payment Options</a>
+              <a href="/" >Payment Options</a>
             </li>
           </ul>
         <ul className="footer-section">

@@ -39,7 +39,7 @@ const Navbar = () => {
               <div className="navbar__item">Help</div>
             </Link>
             <Link to="/account">
-            <img src={"https://res.cloudinary.com/farmersmarket/image/upload/v1592794964/profile_icon_gqhoam.png"} style={{ height: '41px', width: '46px' }}></img>
+            <img src={"https://res.cloudinary.com/farmersmarket/image/upload/v1592794964/profile_icon_gqhoam.png"} style={{ height: '41px', width: '46px' }} alt="profile"></img>
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">

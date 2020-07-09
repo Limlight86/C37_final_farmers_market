@@ -1,5 +1,4 @@
 import React from 'react';
-import producepage from './producepage.css';
 
 const TypeFilter = ({ setChosenType }) => {
   const checkboxOne = document.getElementById('checkbox-1');

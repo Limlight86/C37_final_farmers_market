@@ -23,6 +23,7 @@ const FarmerFilter = ({
           farmers.map((farmer) => {
             return (
               <p
+                style={{cursor:"pointer"}}
                 key={farmer._id}
                 onClick={() => {
                   setChosenStore(farmer._id);
